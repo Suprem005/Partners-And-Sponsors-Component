@@ -24,10 +24,10 @@ const AboutUs = ({
   picturePosition = 'left',
 }: AboutUsProps) => {
   return (
-    <section className='flex justify-center items-center p-6 md:p-10 w-full'>
+    <section className=' flex justify-center items-center p-6 md:p-10 w-full'>
       <div
         className={cn(
-          'flex w-full max-w-5xl justify-center items-center gap-6 md:gap-10  hover:shadow-lg transition rounded-2xl overflow-hidden bg-gray-100 p-6',
+          'flex w-full max-w-5xl justify-center items-center gap-4 sm:gap-10  hover:shadow-lg transition rounded-2xl overflow-hidden bg-gray-100 p-6',
           picturePosition === 'left' && 'flex flex-col md:flex-row',
           picturePosition === 'right' && 'flex flex-col md:flex-row-reverse',
           picturePosition === 'top' && 'flex flex-col',
@@ -41,12 +41,12 @@ const AboutUs = ({
               height={300}
               src={image.src}
               alt={image.alt}
-              className='rounded-lg md:object-fit lg:object-cover w-full  h-auto  max-h-80'
+              className='rounded-lg object-fill sm:object-fill  w-full  h-auto  max-h-80 sm:m-12'
               loading='eager'
             />
           </div>
         )}
-        <div className='w-full md:full flex flex-col justify-start items-start gap-4 text-justify'>
+        <div className='w-full md:full flex flex-col justify-start items-start gap-4 text-justify sm: m-12'>
           <h1 className='text-4xl md:text-5xl font-bold'>
             {title.map((part, i) => (
               <span key={i} className={part.color}>
