@@ -24,7 +24,7 @@ const AboutUs = ({
   picturePosition = 'left',
 }: AboutUsProps) => {
   return (
-    <section className=' flex justify-center items-center p-6 md:p-10 w-full'>
+    <section className=' flex justify-center items-center w-full py-20 border-b border-gray-200'>
       <div
         className={cn(
           'flex w-full max-w-5xl justify-center items-center gap-4 sm:gap-10  hover:shadow-lg transition rounded-2xl overflow-hidden bg-gray-100 p-6',

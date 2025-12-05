@@ -1,7 +1,5 @@
 'use-client';
-import React from 'react';
-import { Carousel, CarouselContent, CarouselItem } from './ui/carousel';
-import Autoplay from 'embla-carousel-autoplay';
+
 import CarouselComponent from './CarouselComponent';
 
 type ColoredTitleProps = {
@@ -9,29 +7,50 @@ type ColoredTitleProps = {
   color: string;
 }[];
 
+type clientReviewData = {
+  id: number;
+  name: string;
+  rating: number;
+  feedback: string;
+  date: string;
+  imageUrl: string;
+};
+
 interface ReviewComponentProps {
   title: ColoredTitleProps;
   titleDescription: string;
+  clientData: clientReviewData[];
+  className: string;
+  position?: 'left' | 'right' | 'center';
 }
 
-const Reviews = ({ title, titleDescription }: ReviewComponentProps) => {
+export default function SectionWrapper({
+  title,
+  titleDescription,
+  clientData,
+  className,
+  position = 'left',
+}: ReviewComponentProps) {
+  const positionClasses: Record<string, string> = {
+    left: '!text-left',
+    right: '!text-right',
+    center: '!text-center',
+  };
   return (
-    <section className='flex justify-center items-center p-6 md:p-10 w-full'>
-      <div className=' w-full max-w-5xl mt-6 pr-6 flex flex-col justify-center items-start'>
-        <div className=' gap-4 w-full flex flex-col justify-center items-start text-justify'>
-          <h1 className='text-4xl md:text-5xl font-bold'>
-            {title.map((part, i) => (
-              <span key={i} className={part.color}>
-                {part.text}{' '}
-              </span>
-            ))}
-          </h1>
-          <p className='text-md md: text-base '>{titleDescription}</p>
-        </div>
-        <div className='bg-emerald-600 w-full mt-4'></div>
+    <section className={`${className}`}>
+      <div className={`max-w-5xl mx-auto px-6 ${positionClasses[position]}`}>
+        <h2 className='text-3xl font-semibold mb-4'>
+          {title.map((part, i) => (
+            <span key={i} className={part.color}>
+              {part.text}{' '}
+            </span>
+          ))}
+        </h2>
+        <p className='text-gray-600 mb-10'>{titleDescription}</p>
+      </div>
+      <div className={`max-w-5xl mx-auto px-6`}>
+        <CarouselComponent clientData={clientData} />
       </div>
     </section>
   );
-};
-
-export default Reviews;
+}
