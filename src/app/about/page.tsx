@@ -1,6 +1,6 @@
 'use client';
-import AboutUs from '@/components/AboutUs';
-import Reviews from '@/components/Reviews';
+import PartnersSponsors from '@/components/partners/PartnersSponsors';
+import Reviews from '@/components/review/Reviews';
 
 const clientData = [
   {
@@ -50,6 +50,15 @@ const clientData = [
   },
 ];
 
+const partnersData = [
+  { id: 1, name: 'Microsoft', logoUrl: '/images/logos/microsoft.png' },
+  { id: 2, name: 'Google', logoUrl: '/images/logos/google.png' },
+  { id: 3, name: 'Amazon', logoUrl: '/images/logos/amazon.png' },
+  { id: 4, name: 'Netflix', logoUrl: '/images/logos/netflix.png' },
+  { id: 5, name: 'Tesla', logoUrl: '/images/logos/tesla.png' },
+  { id: 6, name: 'Meta', logoUrl: '/images/logos/meta.png' },
+];
+
 const About = () => {
   return (
     <div>
@@ -67,12 +76,24 @@ const About = () => {
       <Reviews
         title={[
           { text: 'What Our Client', color: 'text-black' },
-          { text: 'Say', color: 'text-black' },
+          { text: 'Say!?', color: 'text-black' },
         ]}
         titleDescription='At the heart of our brand is the trust and satisfaction of our customers. Every review reflects real experiences, honest feedback, and the value we strive to deliver. Whether it is praise for our quality, suggestions for improvement, or stories of how our product made a difference, these voices help us grow and inspire confidence for new customers. We believe reviews are not just ratings—they are conversations. Dive in below to see what our community has to say and discover why so many choose us.'
         clientData={clientData}
         className='py-20 border-b border-gray-200'
         position='left'
+      />
+
+      <PartnersSponsors
+        title='Our Clients'
+        description='Trusted by high-growth startups across industries.'
+        limit={6}
+        button={{ label: 'See our clients', url: 'facebook.com' }}
+        style={{ buttonStyle: 'outline', displayType: 'carousel' }}
+        partnerData={partnersData}
+        className='max-w-5xl mx-auto px-6'
+        textPosition='left'
+        buttonPosition='center'
       />
     </div>
   );

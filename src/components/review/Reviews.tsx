@@ -39,7 +39,7 @@ export default function SectionWrapper({
   return (
     <section className={`${className}`}>
       <div className={`max-w-5xl mx-auto px-6 ${positionClasses[position]}`}>
-        <h2 className='text-3xl font-semibold mb-4'>
+        <h2 className='text-5xl font-bold mb-4'>
           {title.map((part, i) => (
             <span key={i} className={part.color}>
               {part.text}{' '}
