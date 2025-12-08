@@ -1,10 +1,9 @@
+import Autoplay from 'embla-carousel-autoplay';
 import { ChevronRight } from 'lucide-react';
 import Image from 'next/image';
+import React from 'react';
 import { Button } from '../ui/button';
 import { Carousel, CarouselContent, CarouselItem } from '../ui/carousel';
-import plugin from 'tailwindcss-animate';
-import React from 'react';
-import Autoplay from 'embla-carousel-autoplay';
 
 type PartnerItems = {
   id: number;
@@ -30,7 +29,7 @@ interface PartnersSponsorsProps {
 export default function PartnersSponsors({
   title,
   description,
-  limit = 6,
+  limit = 5,
   button,
   style,
   partnerData,
@@ -49,9 +48,7 @@ export default function PartnersSponsors({
     right: '!justify-end',
   };
   const displayedItems = partnerData.slice(0, limit);
-  const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: false })
-  );
+  const plugin = React.useRef(Autoplay({ delay: 2000 }));
 
   return (
     <section className='py-20 border-b border-gray-200'>
@@ -79,7 +76,8 @@ export default function PartnersSponsors({
                   alt={item.name}
                   className='object-contain'
                   width={120}
-                  height={60}
+                  height={120}
+                  loading='eager'
                 />
               </div>
             ))}
@@ -88,14 +86,14 @@ export default function PartnersSponsors({
           <Carousel
             plugins={[plugin.current]}
             className='w-full max-w-6xl'
-            onMouseEnter={plugin.current.stop}
-            onMouseLeave={plugin.current.reset}
+            onMouseEnter={() => plugin.current.stop()}
+            onMouseLeave={() => plugin.current.play()}
           >
             <CarouselContent>
               {displayedItems.map((item) => (
                 <CarouselItem
                   key={item.id}
-                  className='basis-full sm:basis-1/2 lg:basis-1/3 p-4'
+                  className='basis-full sm:basis-1/4 lg:basis-1/5 p-4'
                 >
                   <div className='rounded-md flex justify-center items-center hover:shadow-lg shadow-gray-200'>
                     <Image
@@ -103,7 +101,7 @@ export default function PartnersSponsors({
                       alt={item.name}
                       className='object-contain'
                       width={120}
-                      height={60}
+                      height={120}
                     />
                   </div>
                 </CarouselItem>

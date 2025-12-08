@@ -1,6 +1,11 @@
 'use client';
+
+import AboutOrganizer from '@/components/about/AboutOrganizer';
+import AboutUs from '@/components/about/AboutUs';
 import PartnersSponsors from '@/components/partners/PartnersSponsors';
 import Reviews from '@/components/review/Reviews';
+
+const className: string = 'max-w-5xl mx-auto px-6';
 
 const clientData = [
   {
@@ -59,7 +64,7 @@ const partnersData = [
   { id: 6, name: 'Meta', logoUrl: '/images/logos/meta.png' },
 ];
 
-const About = () => {
+const Home = () => {
   return (
     <div>
       {/* <AboutUs
@@ -72,6 +77,23 @@ const About = () => {
         image={{ src: '/images/nike.jpg', alt: 'Nike Runner' }}
         picturePosition='left'
       /> */}
+
+      <AboutOrganizer
+        title='About Our Platform'
+        shortDescription='"We create innovative, user‑friendly solutions that blend design and technology to inspire and empower."'
+        className={className}
+        bodyDescription='We are an innovative platform built to simplify event booking and management. Our mission is to connect people with unforgettable experiences—whether concerts, conferences, weddings, or community gatherings. By combining user‑friendly design with smart technology, we make discovering, booking, and organizing events seamless, reliable, and enjoyable for everyone.'
+        button={{
+          label: 'Get Started',
+          url: 'https://goodgoing.iionstech.com.np/register',
+        }}
+        style={{ buttonStyle: 'filled' }}
+        textPosition='center'
+        textAlignment='justify'
+        buttonPosition='center'
+        picturePosition='left'
+        image={{ src: '/images/organization/formula.jpg', alt: 'F1 RedBull' }}
+      />
 
       <Reviews
         title={[
@@ -91,12 +113,12 @@ const About = () => {
         button={{ label: 'See our clients', url: 'facebook.com' }}
         style={{ buttonStyle: 'outline', displayType: 'carousel' }}
         partnerData={partnersData}
-        className='max-w-5xl mx-auto px-6'
-        textPosition='left'
+        className={className}
+        textPosition='center'
         buttonPosition='center'
       />
     </div>
   );
 };
 
-export default About;
+export default Home;

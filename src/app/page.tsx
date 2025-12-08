@@ -1,10 +1,9 @@
-import React from 'react';
-import About from './about/page';
+import Home from './home/page';
 
 const page = () => {
   return (
     <div>
-      <About />
+      <Home />
     </div>
   );
 };
