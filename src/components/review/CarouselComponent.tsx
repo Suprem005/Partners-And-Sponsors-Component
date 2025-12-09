@@ -35,12 +35,13 @@ const CarouselComponent = ({
       plugins={[plugin.current]}
       onMouseEnter={() => plugin.current.stop()}
       onMouseLeave={() => plugin.current.play()}
+      className='@container'
     >
       <CarouselContent className={`flex ${className}`}>
         {clientData.map((items) => (
           <CarouselItem
             key={items.id}
-            className='basis-full sm:basis-1/2 lg:basis-1/3 p-4'
+            className='basis-full @md:basis-1/2 @lg:basis-1/3 p-4'
           >
             <Card className='border border-gray-200 rounded-lg p-6 hover:border-gray-400 transition'>
               <CardContent className='flex flex-col gap-4 p-0'>

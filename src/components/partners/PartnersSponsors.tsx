@@ -51,10 +51,10 @@ export default function PartnersSponsors({
   const plugin = React.useRef(Autoplay({ delay: 2000 }));
 
   return (
-    <section className='py-20 border-b border-gray-200'>
+    <section className='@container py-20 border-b border-gray-200'>
       {/* title and description  */}
       <div className={`${className} ${TextPositionClass[textPosition]}`}>
-        <h2 className='text-5xl font-bold mb-4'>{title}</h2>
+        <h2 className='text-3xl @md:text-5xl font-bold mb-4'>{title}</h2>
         <p
           className={`text-lg text-gray-600 mb-8 max-w-2xl${TextPositionClass[textPosition]} `}
         >
@@ -65,7 +65,7 @@ export default function PartnersSponsors({
       {/* logo image  */}
       <div className={`${className}`}>
         {style?.displayType === 'grid' ? (
-          <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8'>
+          <div className='grid @sm:grid-cols-2 @md:grid-cols-3 @lg:grid-cols-5 gap-8'>
             {displayedItems.map((item) => (
               <div
                 key={item.id}
@@ -93,7 +93,7 @@ export default function PartnersSponsors({
               {displayedItems.map((item) => (
                 <CarouselItem
                   key={item.id}
-                  className='basis-full sm:basis-1/4 lg:basis-1/5 p-4'
+                  className='basis-full @sm:basis-1/3 @md:basis-1/4 @lg:basis-1/5 p-4'
                 >
                   <div className='rounded-md flex justify-center items-center hover:shadow-lg shadow-gray-200'>
                     <Image
