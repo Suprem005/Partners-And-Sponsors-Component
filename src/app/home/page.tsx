@@ -1,67 +1,68 @@
-'use client';
+"use client";
 
-import AboutOrganizer from '@/components/about/AboutOrganizer';
-import AboutUs from '@/components/about/AboutUs';
-import PartnersSponsors from '@/components/partners/PartnersSponsors';
-import Reviews from '@/components/review/Reviews';
+import AboutOrganizer from "@/components/about/AboutOrganizer";
+import AboutUs from "@/components/about/AboutUs";
+import CallToAction from "@/components/cta/CallToAction";
+import PartnersSponsors from "@/components/partners/PartnersSponsors";
+import Reviews from "@/components/review/Reviews";
 
-const className: string = 'max-w-5xl mx-auto px-6';
+const className: string = "max-w-5xl mx-auto px-6";
 
 const clientData = [
   {
     id: 1,
-    name: 'Niwesh Shrestha',
+    name: "Niwesh Shrestha",
     rating: 5,
     feedback:
-      'Social media integration made promoting our events effortless. The custom payment options were a game-changer for our international attendees',
-    date: '2025-12-04',
-    imageUrl: '/images/nike.jpg',
+      "Social media integration made promoting our events effortless. The custom payment options were a game-changer for our international attendees",
+    date: "2025-12-04",
+    imageUrl: "/images/nike.jpg",
   },
   {
     id: 2,
-    name: 'Abhisek Dahal',
+    name: "Abhisek Dahal",
     rating: 5,
     feedback:
-      'Social media integration made promoting our events effortless. The custom payment options were a game-changer for our international attendees',
-    date: '2025-12-04',
-    imageUrl: '/images/nike.jpg',
+      "Social media integration made promoting our events effortless. The custom payment options were a game-changer for our international attendees",
+    date: "2025-12-04",
+    imageUrl: "/images/nike.jpg",
   },
   {
     id: 3,
-    name: 'Pratik Dai',
+    name: "Pratik Dai",
     rating: 4,
     feedback:
-      'Social media integration made promoting our events effortless. The custom payment options were a game-changer for our international attendees',
-    date: '2025-12-04',
-    imageUrl: '/images/nike.jpg',
+      "Social media integration made promoting our events effortless. The custom payment options were a game-changer for our international attendees",
+    date: "2025-12-04",
+    imageUrl: "/images/nike.jpg",
   },
   {
     id: 4,
-    name: 'Naammuna Rai',
+    name: "Naammuna Rai",
     rating: 1,
     feedback:
-      'Social media integration made promoting our events effortless. The custom payment options were a game-changer for our international attendees',
-    date: '2025-12-04',
-    imageUrl: '/images/naammuna.jpg',
+      "Social media integration made promoting our events effortless. The custom payment options were a game-changer for our international attendees",
+    date: "2025-12-04",
+    imageUrl: "/images/naammuna.jpg",
   },
   {
     id: 5,
-    name: 'Supreme Shrestha',
+    name: "Supreme Shrestha",
     rating: 2,
     feedback:
-      'Social media integration made promoting our events effortless. The custom payment options were a game-changer for our international attendees',
-    date: '2025-12-04',
-    imageUrl: '/images/supreme.jpg',
+      "Social media integration made promoting our events effortless. The custom payment options were a game-changer for our international attendees",
+    date: "2025-12-04",
+    imageUrl: "/images/supreme.jpg",
   },
 ];
 
 const partnersData = [
-  { id: 1, name: 'Microsoft', logoUrl: '/images/logos/microsoft.png' },
-  { id: 2, name: 'Google', logoUrl: '/images/logos/google.png' },
-  { id: 3, name: 'Amazon', logoUrl: '/images/logos/amazon.png' },
-  { id: 4, name: 'Netflix', logoUrl: '/images/logos/netflix.png' },
-  { id: 5, name: 'Tesla', logoUrl: '/images/logos/tesla.png' },
-  { id: 6, name: 'Meta', logoUrl: '/images/logos/meta.png' },
+  { id: 1, name: "Microsoft", logoUrl: "/images/logos/microsoft.png" },
+  { id: 2, name: "Google", logoUrl: "/images/logos/google.png" },
+  { id: 3, name: "Amazon", logoUrl: "/images/logos/amazon.png" },
+  { id: 4, name: "Netflix", logoUrl: "/images/logos/netflix.png" },
+  { id: 5, name: "Tesla", logoUrl: "/images/logos/tesla.png" },
+  { id: 6, name: "Meta", logoUrl: "/images/logos/meta.png" },
 ];
 
 const Home = () => {
@@ -79,23 +80,23 @@ const Home = () => {
       /> */}
 
       <AboutOrganizer
-        title='About Our Platform'
+        title="About Our Platform"
         shortDescription='"We create innovative, user‑friendly solutions that blend design and technology to inspire and empower."'
         className={className}
-        bodyDescription='We are an innovative platform built to simplify event booking and management. Our mission is to connect people with unforgettable experiences—whether concerts, conferences, weddings, or community gatherings. By combining user‑friendly design with smart technology, we make discovering, booking, and organizing events seamless, reliable, and enjoyable for everyone.'
+        bodyDescription="We are an innovative platform built to simplify event booking and management. Our mission is to connect people with unforgettable experiences—whether concerts, conferences, weddings, or community gatherings. By combining user‑friendly design with smart technology, we make discovering, booking, and organizing events seamless, reliable, and enjoyable for everyone."
         button={{
-          label: 'Get Started',
-          url: 'https://goodgoing.iionstech.com.np/register',
+          label: "Get Started",
+          url: "https://goodgoing.iionstech.com.np/register",
         }}
-        style={{ buttonStyle: 'filled' }}
-        textPosition='center'
-        textAlignment='justify'
-        buttonPosition='center'
-        picturePosition='left'
-        image={{ src: '/images/organization/formula.jpg', alt: 'F1 RedBull' }}
+        style={{ buttonStyle: "filled" }}
+        textPosition="left"
+        textAlignment="justify"
+        buttonPosition="center"
+        picturePosition="left"
+        image={{ src: "/images/organization/formula.jpg", alt: "F1 RedBull" }}
       />
 
-      <Reviews
+      {/* <Reviews
         title={[
           { text: 'What Our Client', color: 'text-black' },
           { text: 'Say!?', color: 'text-black' },
@@ -116,6 +117,22 @@ const Home = () => {
         className={className}
         textPosition='center'
         buttonPosition='center'
+      /> */}
+
+      <CallToAction
+        title="GoodGoing Events"
+        description="We are an innovative platform built to simplify event booking and management. Our mission is to connect people with unforgettable experiences—whether concerts, conferences, weddings, or community gatherings. By combining user‑friendly design with smart technology, we make discovering, booking, and organizing events seamless, reliable, and enjoyable for everyone."
+        buttonContents={{
+          label: "Apply Now",
+          url: "https://goodgoing.iionstech.com.np/register",
+        }}
+        style={{
+          buttonStyle: "filled",
+          titlePosition: "center",
+          bodyPosition: "justify",
+          buttonPosition: "center",
+        }}
+        className={className}
       />
     </div>
   );

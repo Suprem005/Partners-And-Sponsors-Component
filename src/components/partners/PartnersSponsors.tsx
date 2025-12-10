@@ -51,7 +51,7 @@ export default function PartnersSponsors({
   const plugin = React.useRef(Autoplay({ delay: 2000 }));
 
   return (
-    <section className='@container py-20 border-b border-gray-200'>
+    <section className='@container py-20 border-b border-gray-200 '>
       {/* title and description  */}
       <div className={`${className} ${TextPositionClass[textPosition]}`}>
         <h2 className='text-3xl @md:text-5xl font-bold mb-4'>{title}</h2>

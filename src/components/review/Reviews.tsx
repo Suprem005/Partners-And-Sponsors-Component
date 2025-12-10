@@ -37,7 +37,7 @@ export default function SectionWrapper({
     center: '!text-center',
   };
   return (
-    <section className={`@container ${className}`}>
+    <section className={`@container ${className} `}>
       <div className={`max-w-5xl mx-auto px-6 ${positionClasses[position]}`}>
         <h2 className='text-3xl @md:text-5xl font-bold mb-4'>
           {title.map((part, i) => (
