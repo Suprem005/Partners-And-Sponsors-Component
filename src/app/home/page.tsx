@@ -131,6 +131,7 @@ const Home = () => {
           titlePosition: "center",
           bodyPosition: "justify",
           buttonPosition: "center",
+          overlayOpacity: 45,
         }}
         className={className}
       />

@@ -1,6 +1,7 @@
 import { SquareArrowOutUpRight } from "lucide-react";
 import React from "react";
 import { Button } from "../ui/button";
+import Image from "next/image";
 
 // Content Tab
 // title (string)
@@ -23,6 +24,7 @@ type CallToActionProps = {
     bodyPosition?: "left" | "right" | "center" | "justify";
     titlePosition?: "left" | "right" | "center";
     buttonPosition?: "left" | "right" | "center";
+    overlayOpacity?: number;
   };
   className: string;
 };
@@ -31,6 +33,7 @@ export default function CallToAction({
   title,
   buttonContents,
   description,
+
   className,
   style,
 }: CallToActionProps) {
@@ -45,34 +48,41 @@ export default function CallToAction({
     center: "justify-center",
     right: "justify-end",
   };
+
+  const overlayOpacity = (style?.overlayOpacity ?? 40) / 100;
+
   return (
-    <section className="@container py-20 border-b border-gray-200 bg-[url('/images/organization/wallpaper.jpg')] bg-no-repeat bg-center bg-cover ${className}">
-      <div className={` ${TextPositionClass[style?.titlePosition || "left"]}`}>
-        <h3 className="text-white text-3xl font-bold mb-6 @md:text-5xl">
-          {title}
-        </h3>
-      </div>
-
+    <section className="@container relative border-b border-gray-200 bg-[url('/images/organization/wallpaper.jpg')] bg-no-repeat bg-center bg-cover">
       <div
-        className={`${className}  ${
-          TextPositionClass[style?.bodyPosition || "left"]
-        }`}
-      >
-        <p className="text-white text-md mb-6">{description}</p>
-      </div>
-
-      <div
-        className={`flex ${className} ${
-          ButtonPositionClass[style?.buttonPosition || "center"]
-        }`}
-      >
-        <Button
-          variant={style?.buttonStyle === "filled" ? "default" : "outline"}
-          className="flex justify-center items-center"
+        className="bg-black h-full w-full absolute top-0 left-0 z-0"
+        style={{ opacity: overlayOpacity }}
+      ></div>
+      <div className="relative">
+        <div className={`${TextPositionClass[style?.titlePosition || "left"]}`}>
+          <h3 className="text-white text-3xl font-bold mb-6 @md:text-5xl">
+            {title}
+          </h3>
+        </div>
+        <div
+          className={`${className}  ${
+            TextPositionClass[style?.bodyPosition || "left"]
+          }`}
         >
-          <a href={buttonContents.url}>{buttonContents.label}</a>
-          <SquareArrowOutUpRight />
-        </Button>
+          <p className="text-white text-md mb-6">{description}</p>
+        </div>
+        <div
+          className={`flex ${className} ${
+            ButtonPositionClass[style?.buttonPosition || "center"]
+          }`}
+        >
+          <Button
+            variant={style?.buttonStyle === "filled" ? "default" : "outline"}
+            className="flex justify-center items-center"
+          >
+            <a href={buttonContents.url}>{buttonContents.label}</a>
+            <SquareArrowOutUpRight />
+          </Button>
+        </div>
       </div>
     </section>
   );
