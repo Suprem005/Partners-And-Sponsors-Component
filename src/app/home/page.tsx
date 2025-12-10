@@ -2,11 +2,57 @@
 
 import AboutOrganizer from "@/components/about/AboutOrganizer";
 import AboutUs from "@/components/about/AboutUs";
+import BlogLists from "@/components/blog/Blog";
 import CallToAction from "@/components/cta/CallToAction";
 import PartnersSponsors from "@/components/partners/PartnersSponsors";
 import Reviews from "@/components/review/Reviews";
 
 const className: string = "max-w-5xl mx-auto px-6";
+
+const blogsData = [
+  {
+    id: "1",
+    title: "McLaren P1",
+    description:
+      "The McLaren P1 is a limited-production, hybrid hypercar known for its extreme performance, officially produced from 2013 to 2015. It features a 3.8-liter twin-turbocharged V8 engine combined with an electric motor, producing a combined 916 horsepower, enabling it to accelerate from 0–100 km/h in 2.8 seconds. The P1 is also recognized for its advanced aerodynamics and driver-focused design, drawing heavily on McLaren's Formula 1 racing technology.",
+    imageUrl: "/images/blog/mclaren.jpg",
+  },
+  {
+    id: "2",
+    title: "Porsche 911 GTR",
+    description:
+      "The McLaren P1 is a limited-production, hybrid hypercar known for its extreme performance, officially produced from 2013 to 2015. It features a 3.8-liter twin-turbocharged V8 engine combined with an electric motor, producing a combined 916 horsepower, enabling it to accelerate from 0–100 km/h in 2.8 seconds. The P1 is also recognized for its advanced aerodynamics and driver-focused design, drawing heavily on McLaren's Formula 1 racing technology.",
+    imageUrl: "/images/blog/mclaren.jpg",
+  },
+  {
+    id: "3",
+    title: "Lamborghini Countach",
+    description:
+      "The McLaren P1 is a limited-production, hybrid hypercar known for its extreme performance, officially produced from 2013 to 2015. It features a 3.8-liter twin-turbocharged V8 engine combined with an electric motor, producing a combined 916 horsepower, enabling it to accelerate from 0–100 km/h in 2.8 seconds. The P1 is also recognized for its advanced aerodynamics and driver-focused design, drawing heavily on McLaren's Formula 1 racing technology.",
+    imageUrl: "/images/blog/mclaren.jpg",
+  },
+  {
+    id: "4",
+    title: "Nissan Skyline GTR",
+    description:
+      "The McLaren P1 is a limited-production, hybrid hypercar known for its extreme performance, officially produced from 2013 to 2015. It features a 3.8-liter twin-turbocharged V8 engine combined with an electric motor, producing a combined 916 horsepower, enabling it to accelerate from 0–100 km/h in 2.8 seconds. The P1 is also recognized for its advanced aerodynamics and driver-focused design, drawing heavily on McLaren's Formula 1 racing technology.",
+    imageUrl: "/images/blog/mclaren.jpg",
+  },
+  {
+    id: "5",
+    title: "Mazda RX7",
+    description:
+      "The McLaren P1 is a limited-production, hybrid hypercar known for its extreme performance, officially produced from 2013 to 2015. It features a 3.8-liter twin-turbocharged V8 engine combined with an electric motor, producing a combined 916 horsepower, enabling it to accelerate from 0–100 km/h in 2.8 seconds. The P1 is also recognized for its advanced aerodynamics and driver-focused design, drawing heavily on McLaren's Formula 1 racing technology.",
+    imageUrl: "/images/blog/mclaren.jpg",
+  },
+  {
+    id: "6",
+    title: "Ferrari Stradale SF90",
+    description:
+      "The McLaren P1 is a limited-production, hybrid hypercar known for its extreme performance, officially produced from 2013 to 2015. It features a 3.8-liter twin-turbocharged V8 engine combined with an electric motor, producing a combined 916 horsepower, enabling it to accelerate from 0–100 km/h in 2.8 seconds. The P1 is also recognized for its advanced aerodynamics and driver-focused design, drawing heavily on McLaren's Formula 1 racing technology.",
+    imageUrl: "/images/blog/mclaren.jpg",
+  },
+];
 
 const clientData = [
   {
@@ -134,6 +180,14 @@ const Home = () => {
           overlayOpacity: 45,
         }}
         className={className}
+      />
+
+      <BlogLists
+        title="Latest Blogs"
+        position="top"
+        className={className}
+        blogs={blogsData}
+        description="A supercar is a high‑performance sports vehicle built for speed, precision, and luxury. Featuring powerful engines, lightweight materials, and advanced aerodynamics, it delivers thrilling acceleration and handling. Beyond performance, supercars symbolize exclusivity and innovation, blending cutting‑edge technology with striking design to create an aspirational driving experience admired worldwide."
       />
     </div>
   );
