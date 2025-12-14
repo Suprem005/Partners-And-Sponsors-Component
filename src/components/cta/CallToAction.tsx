@@ -52,7 +52,7 @@ export default function CallToAction({
   const overlayOpacity = (style?.overlayOpacity ?? 40) / 100;
 
   return (
-    <section className="@container relative border-b border-gray-200 bg-[url('/images/organization/wallpaper.jpg')] bg-no-repeat bg-center bg-cover">
+    <section className="@container py-20 relative border-b border-gray-200 bg-[url('/images/organization/wallpaper.jpg')] bg-no-repeat bg-center bg-cover">
       <div
         className="bg-black h-full w-full absolute top-0 left-0 z-0"
         style={{ opacity: overlayOpacity }}

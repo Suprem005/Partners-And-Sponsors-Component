@@ -1,10 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { Grid3x2, List } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
 import { Button } from "../ui/button";
-import { ToggleGroup, ToggleGroupItem } from "../ui/toggle-group";
 
 type Blog = {
   id: string;
@@ -19,6 +16,7 @@ interface BlogListProps {
   position: "top" | "bottom";
   className: string;
   blogs: Blog[];
+  view: "list" | "grid"; // ✅ NEW PROP
 }
 
 const BlogLists = ({
@@ -27,63 +25,43 @@ const BlogLists = ({
   position,
   className,
   blogs,
+  view, // ✅ using prop instead of state
 }: BlogListProps) => {
-  const [view, setView] = useState<"list" | "grid">("grid");
-
   return (
-    <section className="py-20 border-b border-gray-200">
-      {/* title  */}
-      <div className="flex flex-wrap justify-end items-center">
-        <h1 className="text-3xl sm:text-5xl font-bold">{title}</h1>
+    <section className="@container py-20 border-b border-gray-200">
+      {/* Title + View All Button */}
+      <div
+        className={`flex flex-row justify-between @md:flex-row @md:items-center @md:justify-between mb-4 ${className}`}
+      >
+        <h2 className="text-3xl @md:text-5xl font-bold mb-4 @md:mb-0">
+          {title}
+        </h2>
 
-        {/* for positioning view all at top  */}
         {position === "top" && (
-          <div
-            className={cn(
-              `mt-4 sm:mt-0 ${className} `,
-              "flex justify-end items-center sm:justify-end"
-            )}
-          >
-            <Button variant="secondary" asChild>
-              <a
-                target="blank"
-                href="https://www.koenigsegg.com/model/sadairs-spear"
-              >
-                View all
-              </a>
-            </Button>
-          </div>
+          <Button variant="secondary" asChild>
+            <a
+              target="blank"
+              href="https://www.koenigsegg.com/model/sadairs-spear"
+            >
+              View all
+            </a>
+          </Button>
         )}
       </div>
 
-      {/* header description  */}
-      <div>
-        <p className="text-md sm:text-lg text-justify">{description}</p>
+      {/* Description */}
+      <div className={`mb-6 ${className}`}>
+        <p className="text-md @md:text-lg text-gray-600 text-justify">
+          {description}
+        </p>
       </div>
 
-      {/* toggling views  */}
-
-      <div>
-        <ToggleGroup
-          type="single"
-          value={view}
-          onValueChange={(val) => val && setView(val as "list" | "grid")}
-        >
-          <ToggleGroupItem value="list" aria-label="List view">
-            <List />
-          </ToggleGroupItem>
-          <ToggleGroupItem value="grid" aria-label="Grid view">
-            <Grid3x2 />
-          </ToggleGroupItem>
-        </ToggleGroup>
-      </div>
-
-      {/* blog card details  */}
+      {/* Blog Cards */}
       <div
         className={cn(
-          "gap-8",
+          `gap-8 ${className}`,
           view === "grid"
-            ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+            ? "grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] @md:grid-cols-2 @3xl:grid-cols-3 @4xl:grid-cols-4"
             : "flex flex-col"
         )}
       >
@@ -91,15 +69,15 @@ const BlogLists = ({
           <div
             key={blog.id}
             className={cn(
-              "hover:shadow-lg transition rounded-md overflow-hidden",
-              view === "list" && "flex flex-row items-center gap-4"
+              "rounded-md overflow-hidden hover:shadow-lg transition bg-white shadow-sm",
+              view === "list" && "flex flex-row items-center gap-4 p-2"
             )}
           >
-            {/* image section */}
+            {/* Image */}
             <div
               className={cn(
                 "relative w-full h-48",
-                view === "list" && "w-48 h-32 sm:w-48 sm:h-32"
+                view === "list" && "w-40 h-28 @md:w-48 @md:h-32"
               )}
             >
               <Image
@@ -110,8 +88,8 @@ const BlogLists = ({
               />
             </div>
 
-            {/* title description section */}
-            <div className="p-2  flex-1">
+            {/* Text */}
+            <div className="p-4 flex-1">
               <p className="font-semibold line-clamp-2">{blog.title}</p>
               <p className="text-sm text-gray-600 line-clamp-2">
                 {blog.description}
@@ -121,8 +99,9 @@ const BlogLists = ({
         ))}
       </div>
 
+      {/* Bottom Position for Button - View All */}
       {position === "bottom" && (
-        <div className="flex justify-center sm:justify-center mt-6">
+        <div className={`flex justify-center mt-10 ${className}`}>
           <Button variant="secondary" asChild>
             <a
               target="blank"
