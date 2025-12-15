@@ -180,14 +180,14 @@ const Home = () => {
         className={className}
       /> */}
 
-      <BlogLists
+      {/* <BlogLists
         title="Latest Blogs"
         position="top" // dynamic top or bottom position of BUTTON
         className={className}
         blogs={blogsData}
-        description="A supercar is a high‑performance sports vehicle built for speed, precision, and luxury. Featuring powerful engines, lightweight materials, and advanced aerodynamics, it delivers thrilling acceleration and handling. Beyond performance, supercars symbolize exclusivity and innovation, blending cutting‑edge technology with striking design to create an aspirational driving experience admired worldwide."
+        description="A supercar is a high performance sports vehicle built for speed, precision, and luxury. Featuring powerful engines, lightweight materials, and advanced aerodynamics, it delivers thrilling acceleration and handling. Beyond performance, supercars symbolize exclusivity and innovation, blending cutting‑edge technology with striking design to create an aspirational driving experience admired worldwide."
         view="grid"
-      />
+      /> */}
       {/* <Grid data={values} /> */}
       {/* <Footer
         logo="/logo.svg"
@@ -205,8 +205,15 @@ const Home = () => {
           textAlign: "center",
           fontSize: { title: "text-lg", description: "text-sm" },
         }}
+      /> */}
+      <Footer
+        footerTitle="GGEs"
+        footerDescription="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque,
+            obcaecati. Quasi rem quidem ipsum dolorum fugiat odit similique in
+            sapiente maiores obcaecati nihil vel qui quaerat voluptatibus quas,
+            amet ut."
+        className={className}
       />
-      {/* <Footer /> */}
     </div>
   );
 };

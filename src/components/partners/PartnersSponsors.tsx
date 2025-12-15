@@ -56,7 +56,7 @@ export default function PartnersSponsors({
       <div className={`${className} ${TextPositionClass[textPosition]}`}>
         <h2 className='text-3xl @md:text-5xl font-bold mb-4'>{title}</h2>
         <p
-          className={`text-lg text-gray-600 mb-8 max-w-2xl${TextPositionClass[textPosition]} `}
+          className={`text-lg  mb-8 max-w-2xl${TextPositionClass[textPosition]} `}
         >
           {description}
         </p>
