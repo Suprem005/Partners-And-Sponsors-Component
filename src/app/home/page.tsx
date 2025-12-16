@@ -1,15 +1,9 @@
 "use client";
 
-import AboutOrganizer from "@/components/about/AboutOrganizer";
-import AboutUs from "@/components/about/AboutUs";
-import BlogLists from "@/components/blog/Blog";
-import CallToAction from "@/components/cta/CallToAction";
 import Footer from "@/components/footer/Footer";
-import Grid from "@/components/footer/Grid";
 import PartnersSponsors from "@/components/partners/PartnersSponsors";
-import Reviews from "@/components/review/Reviews";
 
-const className: string = "max-w-5xl mx-auto px-6";
+const className: string = "max-w-7xl mx-auto px-6";
 
 const blogsData = [
   {
@@ -208,10 +202,7 @@ const Home = () => {
       /> */}
       <Footer
         footerTitle="GGEs"
-        footerDescription="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque,
-            obcaecati. Quasi rem quidem ipsum dolorum fugiat odit similique in
-            sapiente maiores obcaecati nihil vel qui quaerat voluptatibus quas,
-            amet ut."
+        footerDescription="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque, obcaecati. Quasi rem quidem ipsum dolorum fugiat odit similique insapiente maiores obcaecati nihil vel qui quaerat voluptatibus quas, amet ut."
         className={className}
       />
     </div>
