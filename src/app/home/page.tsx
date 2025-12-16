@@ -1,5 +1,6 @@
 "use client";
 
+import EventDetails from "@/components/event-details/EventDetails";
 import Footer from "@/components/footer/Footer";
 import PartnersSponsors from "@/components/partners/PartnersSponsors";
 
@@ -145,7 +146,7 @@ const Home = () => {
         position="left"
       /> */}
 
-      <PartnersSponsors
+      {/* <PartnersSponsors
         title="Our Clients"
         description="Trusted by high-growth startups across industries."
         limit={6}
@@ -155,7 +156,7 @@ const Home = () => {
         className={className}
         textPosition="center"
         buttonPosition="center"
-      />
+      /> */}
 
       {/* <CallToAction
         title="GoodGoing Events"
@@ -200,11 +201,14 @@ const Home = () => {
           fontSize: { title: "text-lg", description: "text-sm" },
         }}
       /> */}
-      <Footer
+
+      {/* <Footer
         footerTitle="GGEs"
         footerDescription="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque, obcaecati. Quasi rem quidem ipsum dolorum fugiat odit similique insapiente maiores obcaecati nihil vel qui quaerat voluptatibus quas, amet ut."
         className={className}
-      />
+      /> */}
+
+      <EventDetails />
     </div>
   );
 };

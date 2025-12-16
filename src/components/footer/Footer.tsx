@@ -16,7 +16,7 @@ export default function Footer({
     <>
       <section className="@container py-20 border-b border-gray-200">
         <div
-          className={`${className} flex flex-col items-center @lg:flex-row @lg:justify-between @lg:items-start gap-12`}
+          className={`${className} flex flex-col items-center @3xl:flex-row @3xl:justify-between @3xl:items-start gap-12`}
         >
           {/* title,description  */}
           <div
@@ -147,77 +147,83 @@ export default function Footer({
             <div className=" rounded-2xl flex flex-col items-center gap-1">
               <Link
                 href={"/home"}
-                className="font-semibold text-md @md:text-lg pb-2"
+                className="font-semibold text-lg @md:text-md pb-2"
               >
                 Home
               </Link>
               <Link
-                className="text-muted-foreground text-sm @md:text-md"
+                className="text-muted-foreground text-md @md:text-sm"
                 href="/home"
               >
                 Products
               </Link>
               <Link
-                className="text-muted-foreground text-sm @md:text-md"
+                className="text-muted-foreground text-md @md:text-sm"
                 href="/home"
               >
                 Features
               </Link>
               <Link
-                className="text-muted-foreground text-sm @md:text-md"
+                className="text-muted-foreground text-md @md:text-sm"
                 href="/home"
               >
                 Register
               </Link>
             </div>
             <div className=" rounded-2xl flex flex-col items-center gap-1">
-              <Link href="/home" className="font-semibold text-md @md:text-lg">
+              <Link
+                href="/home"
+                className="font-semibold text-lg @md:text-md pb-2"
+              >
                 Resources
               </Link>
               <Link
-                className="text-muted-foreground text-sm @md:text-md"
+                className="text-muted-foreground text-md @md:text-sm"
                 href="/home"
               >
                 Blog
               </Link>
               <Link
-                className="text-muted-foreground text-sm @md:text-md"
+                className="text-muted-foreground text-md @md:text-sm"
                 href="google.com"
               >
                 Documentation
               </Link>
               <Link
-                className="text-muted-foreground text-sm @md:text-md"
+                className="text-muted-foreground text-md @md:text-sm"
                 href="google.com"
               >
                 Support
               </Link>
             </div>
             <div className=" rounded-2xl  flex flex-col items-center gap-1">
-              <Link href="/home" className="font-semibold text-md @lg:text-lg">
+              <Link
+                href="/home"
+                className="font-semibold text-lg @md:text-md pb-2"
+              >
                 Company
               </Link>
               <Link
                 href="/home"
-                className="text-muted-foreground text-sm @lg:text-md "
+                className="text-muted-foreground text-md @md:text-sm"
               >
                 About
               </Link>
               <Link
                 href="/home"
-                className="text-muted-foreground text-sm @lg:text-md"
+                className="text-muted-foreground text-md @md:text-sm"
               >
                 Careers
               </Link>
               <Link
                 href="/home"
-                className="text-muted-foreground text-sm @lg:text-md"
+                className="text-muted-foreground text-md @md:text-sm"
               >
                 Contact
               </Link>
               <Link
                 href="/home"
-                className="text-muted-foreground text-sm @lg:text-md"
+                className="text-muted-foreground text-md @md:text-sm"
               >
                 Partners
               </Link>
@@ -226,11 +232,13 @@ export default function Footer({
         </div>
       </section>
       {/* copyright  */}
-      <div
-        className={`${className} text-sm text-gray-500 leading-relaxed text-left mt-4`}
-      >
-        <CopyRight />
-      </div>
+      <section className="@container border-b pb-2 border-gray-200">
+        <div
+          className={`${className} text-sm text-gray-500 leading-relaxed text-center @3xl:text-left mt-4`}
+        >
+          <CopyRight />
+        </div>
+      </section>
     </>
   );
 }
