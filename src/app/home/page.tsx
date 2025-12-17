@@ -208,7 +208,7 @@ const Home = () => {
         className={className}
       /> */}
 
-      {/* <EventDetails /> */}
+      <EventDetails />
     </div>
   );
 };
