@@ -1,5 +1,6 @@
 "use client";
 
+import AboutOrganizer from "@/components/about/AboutOrganizer";
 import BlogLists from "@/components/blog/Blog";
 import EventDetails from "@/components/event-details/EventDetails";
 

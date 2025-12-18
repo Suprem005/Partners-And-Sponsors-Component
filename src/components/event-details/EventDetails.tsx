@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 
 interface HeroBlockProps {
-  variant?: "one" | "two" | "three";
+  variant?: "one" | "two" | "three" | "four";
 }
 
 function HeroBanner({ variant = "one" }: HeroBlockProps) {
@@ -11,6 +11,7 @@ function HeroBanner({ variant = "one" }: HeroBlockProps) {
     one: <BannerOne />,
     two: <BannerTwo />,
     three: <BannerThree />,
+    four: <BannerFour />,
   };
   return componentMap[variant];
 }
@@ -125,10 +126,56 @@ function BannerThree() {
   );
 }
 
+function BannerFour() {
+  return (
+    <section className="@container py-6">
+      {/* wrapper  */}
+      <div className="flex flex-col @2xl:flex-row items-start gap-12 mx-6">
+        {/* image  */}
+        <div className="w-full @2xl:w-2/3">
+          <Image
+            className="w-full h-[280px] @md:h-[380px] @lg:h-[480px] rounded-md object-cover"
+            src={"/images/organization/mountain.jpg"}
+            alt="mountain"
+            width={580}
+            height={580}
+            quality={90}
+          />
+        </div>
+
+        {/* event ticket contents */}
+
+        <div className="w-full @2xl:w-1/3 flex flex-col justify-start items-start px-2">
+          {/* contents except button  */}
+          <div
+            className={`@lg:mt-10 flex flex-col justify-center items-start w-full @2xl:w-full text-black  `}
+          >
+            <h2 className="text-3xl @md:text-4xl @lg:text-5xl font-bold mb-4 @3xl:mb-10">
+              Your Event Name
+            </h2>
+
+            <span className="flex mb-2">Wed Dec 17, 2025 1:17 PM</span>
+
+            <span className="flex gap-2 mb-5">
+              <MapPin /> Location
+            </span>
+
+            <div className="text-black w-full">
+              <Button className="w-full " variant="default">
+                Select Tickets
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function EventDetails() {
   return (
     <div>
-      <HeroBanner variant="three" />
+      <HeroBanner variant="four" />
 
       <section className="@container relative flex flex-col py-5 mt-4 mx-4 mb-2">
         <div className={`flex flex-col @2xl:flex-row  gap-15 border-b pb-6`}>
