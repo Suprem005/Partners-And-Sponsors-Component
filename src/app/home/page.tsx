@@ -1,8 +1,7 @@
 "use client";
 
+import BlogLists from "@/components/blog/Blog";
 import EventDetails from "@/components/event-details/EventDetails";
-import Footer from "@/components/footer/Footer";
-import PartnersSponsors from "@/components/partners/PartnersSponsors";
 
 const className: string = "max-w-7xl mx-auto px-6";
 
@@ -181,7 +180,7 @@ const Home = () => {
         className={className}
         blogs={blogsData}
         description="A supercar is a high performance sports vehicle built for speed, precision, and luxury. Featuring powerful engines, lightweight materials, and advanced aerodynamics, it delivers thrilling acceleration and handling. Beyond performance, supercars symbolize exclusivity and innovation, blending cutting‑edge technology with striking design to create an aspirational driving experience admired worldwide."
-        view="grid"
+        view="list"
       /> */}
       {/* <Grid data={values} /> */}
       {/* <Footer

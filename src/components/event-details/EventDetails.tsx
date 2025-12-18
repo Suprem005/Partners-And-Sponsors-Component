@@ -1,26 +1,27 @@
 import { MapPin } from "lucide-react";
-import React from "react";
+import Image from "next/image";
 import { Button } from "../ui/button";
 
 interface HeroBlockProps {
-  variant?: "one" | "two";
+  variant?: "one" | "two" | "three";
 }
 
 function HeroBanner({ variant = "one" }: HeroBlockProps) {
   const componentMap = {
     one: <BannerOne />,
     two: <BannerTwo />,
+    three: <BannerThree />,
   };
   return componentMap[variant];
 }
 
 function BannerOne() {
   return (
-    <section className="@container relative flex flex-col  py-20 mt-4 mx-8 rounded-2xl border-b border-gray-200 bg-[url('/images/organization/mountain.jpg')] bg-no-repeat bg-center bg-cover">
+    <section className="@container relative flex flex-col  py-20 mt-4 mx-4 rounded-2xl border-b border-gray-200 bg-[url('/images/organization/mountain.jpg')] bg-no-repeat bg-center bg-cover">
       <div className={`absolute rounded-2xl inset-0 bg-black opacity-25 z-1`} />
 
       <div
-        className={`px-6 relative z-2 inset-0 flex flex-col justify-center items-start @md:items-center text-white`}
+        className={`px-6 relative z-2 inset-0 flex flex-col justify-center items-start @md:items-start text-white`}
       >
         <h2 className="text-5xl font-bold mb-9">Your Event Name</h2>
 
@@ -37,16 +38,99 @@ function BannerOne() {
     </section>
   );
 }
+
 function BannerTwo() {
-  return <div>This is Banner Two</div>;
+  return (
+    <section className="@container flex flex-col py-10 mt-4 mx-4 rounded-2xl border-b-2 hover:shadow-xl">
+      {/* <div className={`absolute rounded-2xl inset-0 bg-black opacity-25 z-1`} /> */}
+
+      <div className="mb-6 px-4">
+        <Image
+          className="w-full h-[300px] rounded-xl object-cover "
+          src={"/images/organization/mountain.jpg"}
+          alt="mountain"
+          width={1280}
+          height={980}
+          quality={90}
+        />
+      </div>
+
+      {/* contents */}
+      <div className="flex flex-col justify-start @3xl:flex-row @3xl:gap-25 @3xl:items-center px-4">
+        {/* contents except button  */}
+        <div
+          className={`mt-10 flex flex-col justify-center items-start w-full @3xl:w-2/3 text-black @3xl:border-r-3 border-dotted`}
+        >
+          <h2 className="text-4xl @lg:text-5xl font-bold mb-4 @3xl:mb-10">
+            Your Event Name
+          </h2>
+
+          <span className="flex mb-2">Wed Dec 17, 2025 1:17 PM</span>
+
+          <span className="flex gap-2 mb-5">
+            <MapPin /> Location
+          </span>
+        </div>
+        <div className="text-black @3xl:w-1/4 ">
+          <Button
+            className="@3xl:w-full h-[60px] rounded-2xl"
+            variant="default"
+          >
+            Select Tickets
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function BannerThree() {
+  return (
+    <section className="@container">
+      <div>
+        <Image
+          className="w-full h-[500px]  object-cover "
+          src={"/images/organization/mountain.jpg"}
+          alt="Hero"
+          width={1290}
+          height={980}
+        />
+      </div>
+      {/* contents */}
+      <div className="flex flex-col justify-start @3xl:flex-row @3xl:gap-25 @3xl:items-center px-4">
+        {/* contents except button  */}
+        <div
+          className={`mt-10 flex flex-col justify-center items-start w-full @3xl:w-2/3 text-black @3xl:border-r-3 border-dotted`}
+        >
+          <h2 className="text-4xl @lg:text-5xl font-bold mb-4 @3xl:mb-10">
+            Your Event Name
+          </h2>
+
+          <span className="flex mb-2">Wed Dec 17, 2025 1:17 PM</span>
+
+          <span className="flex gap-2 mb-5">
+            <MapPin /> Location
+          </span>
+        </div>
+        <div className="text-black @3xl:w-1/4 ">
+          <Button
+            className="@3xl:w-full h-[60px] rounded-2xl"
+            variant="default"
+          >
+            Select Tickets
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export default function EventDetails() {
   return (
-    <>
-      <HeroBanner variant="one" />
+    <div>
+      <HeroBanner variant="three" />
 
-      <section className="@container relative flex flex-col py-5 mt-4 mx-8 rounded-2xl">
+      <section className="@container relative flex flex-col py-5 mt-4 mx-4 mb-2">
         <div className={`flex flex-col @2xl:flex-row  gap-15 border-b pb-6`}>
           <div className="w-full">
             <div className="flex mb-2">
@@ -109,6 +193,25 @@ export default function EventDetails() {
                 reiciendis consectetur nam ullam mollitia doloremque ipsam ab, a
                 officia facilis numquam nihil voluptatem!
               </li>
+
+              <li>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Accusantium ducimus nesciunt quas odit. Rerum facere cumque
+                reiciendis consectetur nam ullam mollitia doloremque ipsam ab, a
+                officia facilis numquam nihil voluptatem!
+              </li>
+              <li>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Accusantium ducimus nesciunt quas odit. Rerum facere cumque
+                reiciendis consectetur nam ullam mollitia doloremque ipsam ab, a
+                officia facilis numquam nihil voluptatem!
+              </li>
+              <li>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Accusantium ducimus nesciunt quas odit. Rerum facere cumque
+                reiciendis consectetur nam ullam mollitia doloremque ipsam ab, a
+                officia facilis numquam nihil voluptatem!
+              </li>
               <li>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Accusantium ducimus nesciunt quas odit. Rerum facere cumque
@@ -125,7 +228,7 @@ export default function EventDetails() {
           </div>
 
           {/* sticky */}
-          <div className="sticky top-4 right-0 flex flex-col w-full h-1/2 justify-center items-center  p-6 @2xl:items-start @2xl:w-[400px] border-2 rounded-2xl">
+          <div className="sticky top-4 right-0 flex flex-col w-full h-1/2 justify-center items-center  p-6 @2xl:items-start @2xl:w-[400px] border-2  rounded-2xl hover:shadow-lg">
             <h2 className="text-xl font-bold mb-3">Your Event Name</h2>
 
             <span className="flex mb-2 text-md font-semibold">
@@ -144,6 +247,6 @@ export default function EventDetails() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
