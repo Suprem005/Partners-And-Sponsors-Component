@@ -1,6 +1,8 @@
-import { MapPin } from "lucide-react";
+import { CalendarHeart, Eye, MapPin } from "lucide-react";
 import Image from "next/image";
 import { Button } from "../ui/button";
+import Snowfall from "react-snowfall";
+import { Badge } from "../ui/badge";
 
 interface HeroBlockProps {
   variant?: "one" | "two" | "three" | "four";
@@ -107,7 +109,17 @@ function BannerThree() {
             Your Event Name
           </h2>
 
-          <span className="flex mb-2">Wed Dec 17, 2025 1:17 PM</span>
+          <div className="mb-4 w-full flex gap-2">
+            <Badge variant={"default"}>Exhibition</Badge>
+            <Badge variant={"outline"}>#Music</Badge>
+            <Badge variant={"outline"}>#Fun</Badge>
+            <Badge variant={"outline"}>#Songs</Badge>
+          </div>
+
+          <span className="flex gap-2 mb-4">
+            <CalendarHeart />
+            Wed Dec 17, 2025 1:17 PM
+          </span>
 
           <span className="flex gap-2 mb-5">
             <MapPin /> Location
@@ -175,11 +187,21 @@ function BannerFour() {
 export default function EventDetails() {
   return (
     <div>
-      <HeroBanner variant="four" />
+      <Snowfall color="cyan" snowflakeCount={150} />
+      <HeroBanner variant="three" />
 
       <section className="@container relative flex flex-col py-5 mt-4 mx-4 mb-2">
         <div className={`flex flex-col @2xl:flex-row  gap-15 border-b pb-6`}>
           <div className="w-full">
+            <div className="flex mb-4 border-b-2 border-dotted p-2">
+              <p className="text-md italic text-muted-foreground">
+                &quot; Siliguri, brace yourselves! The one and only Yabesh
+                Thapa, the youth sensation who’s taken the music scene by storm,
+                is coming back to your city for an electrifying live
+                performance. Mark your calendars — 7th December 2024 — because
+                this is an event you won’t want to miss! &quot;
+              </p>
+            </div>
             <div className="flex mb-2">
               <button className="text-2xl font-semibold">Description</button>
             </div>
@@ -275,21 +297,30 @@ export default function EventDetails() {
           </div>
 
           {/* sticky */}
-          <div className="sticky top-4 right-0 flex flex-col w-full h-1/2 justify-center items-center  p-6 @2xl:items-start @2xl:w-[400px] border-2  rounded-2xl hover:shadow-lg">
-            <h2 className="text-xl font-bold mb-3">Your Event Name</h2>
+          <div className="sticky top-4 right-0 flex flex-col w-full h-1/2 justify-center items-center gap-4 p-2 @2xl:items-start @2xl:w-[400px] ">
+            <div className="flex flex-col justify-center items-center w-full h-1/2 border-2 rounded-2xl p-4 hover:shadow-lg">
+              <h2 className="text-xl font-bold mb-3">Your Event Name</h2>
 
-            <span className="flex mb-2 text-md font-semibold">
-              Wed Dec 17, 2025 1:17 PM
-            </span>
+              <span className="flex mb-2 text-md font-semibold">
+                Wed Dec 17, 2025 1:17 PM
+              </span>
 
-            <span className="flex gap-2 mb-6">
-              <MapPin /> Location
-            </span>
+              <span className="flex gap-2 mb-6">
+                <MapPin /> Location
+              </span>
 
-            <div className="text-black w-full">
-              <Button variant="default" className="w-full">
-                Select Tickets
-              </Button>
+              <div className="text-black w-full">
+                <Button variant="default" className="w-full">
+                  Select Tickets
+                </Button>
+              </div>
+            </div>
+
+            <div className="flex flex-col justify-center items-start w-1/3 h-1/2 border-2 rounded-2xl p-4 hover:shadow-lg">
+              <div className="flex flex-row w-full gap-2 justify-center items-center">
+                <Eye size={30} />
+                <p className="text-md">50</p>
+              </div>
             </div>
           </div>
         </div>
