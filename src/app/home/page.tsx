@@ -1,7 +1,5 @@
 "use client";
 
-import AboutOrganizer from "@/components/about/AboutOrganizer";
-import BlogLists from "@/components/blog/Blog";
 import EventDetails from "@/components/event-details/EventDetails";
 
 const className: string = "max-w-7xl mx-auto px-6";
