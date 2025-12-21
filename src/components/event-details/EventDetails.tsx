@@ -1,8 +1,14 @@
-import { CalendarHeart, Eye, MapPin } from "lucide-react";
+import { CalendarHeart, Eye, MapPin, Share, Share2 } from "lucide-react";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import Snowfall from "react-snowfall";
 import { Badge } from "../ui/badge";
+import { InstagramIcon } from "../icons/InstagramIcon";
+import { LinkedInIcon } from "../icons";
+import { GitHubIcon } from "../icons/GitHubIcon";
+import { ButtonGroup } from "../ui/button-group";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
 
 interface HeroBlockProps {
   variant?: "one" | "two" | "three" | "four";
@@ -187,12 +193,13 @@ function BannerFour() {
 export default function EventDetails() {
   return (
     <div>
-      <Snowfall color="cyan" snowflakeCount={150} />
+      {/* <Snowfall color="cyan" snowflakeCount={150} /> */}
       <HeroBanner variant="three" />
 
       <section className="@container relative flex flex-col py-5 mt-4 mx-4 mb-2">
         <div className={`flex flex-col @2xl:flex-row  gap-15 border-b pb-6`}>
           <div className="w-full">
+            {/* short description  */}
             <div className="flex mb-4 border-b-2 border-dotted p-2">
               <p className="text-md italic text-muted-foreground">
                 &quot; Siliguri, brace yourselves! The one and only Yabesh
@@ -202,6 +209,10 @@ export default function EventDetails() {
                 this is an event you won’t want to miss! &quot;
               </p>
             </div>
+
+            <h2 className="text-3xl font-bold mb-6">Event Gallery</h2>
+
+            {/* description  */}
             <div className="flex mb-2">
               <button className="text-2xl font-semibold">Description</button>
             </div>
@@ -316,10 +327,46 @@ export default function EventDetails() {
               </div>
             </div>
 
-            <div className="flex flex-col justify-center items-start w-1/3 h-1/2 border-2 rounded-2xl p-4 hover:shadow-lg">
-              <div className="flex flex-row w-full gap-2 justify-center items-center">
-                <Eye size={30} />
-                <p className="text-md">50</p>
+            <div className="w-full flex flex-row gap-2">
+              {/* view count  */}
+              <div className="flex flex-row justify-start items-center w-1/3 border-2 rounded-2xl p-4 hover:shadow-lg">
+                <div className="flex flex-row w-full gap-2 justify-center items-center">
+                  <Eye size={30} />
+                  <p className="text-md">50</p>
+                </div>
+              </div>
+
+              <div className="flex flex-row gap-2 justify-between items-center border-2 rounded-2xl p-4 hover:shadow-lg w-full">
+                <div className="flex gap-1 justify-center items-center font-mono border-r-2 pr-2">
+                  <a className="flex items-center justify-center gap-1  rounded-md hover:bg-gray-100">
+                    <Share2 strokeWidth={2} size={20} /> Share
+                  </a>
+                </div>
+
+                {/* social media  */}
+                <div className="flex flex-row gap-1">
+                  <a
+                    href="https://www.instagram.com/"
+                    target="_blank"
+                    className="flex items-center justify-center  rounded-md hover:bg-gray-100"
+                  >
+                    <InstagramIcon className="h-8 w-8" />
+                  </a>
+
+                  <a
+                    href="https://www.linkedin.com/in/suprem-shrestha-9861992b1/"
+                    className="flex items-center justify-center rounded-md hover:bg-gray-100"
+                  >
+                    <LinkedInIcon className="h-8 w-8" />
+                  </a>
+                  <a
+                    href="https://github.com/Suprem005"
+                    target="_blank"
+                    className="flex items-center justify-center rounded-md hover:bg-gray-100"
+                  >
+                    <GitHubIcon className="h-8 w-8" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>

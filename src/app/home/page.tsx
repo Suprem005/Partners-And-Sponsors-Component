@@ -113,6 +113,35 @@ const values = [
   { id: 5, title: "kuper", label: "view all" },
   { id: 6, title: "cuper", label: "view all" },
 ];
+
+const events = [
+  {
+    id: 1,
+    title: "Music Fest",
+    image: "https://picsum.photos/300/200?random=1",
+  },
+  {
+    id: 2,
+    title: "Tech Conference",
+    image: "https://picsum.photos/300/200?random=2",
+  },
+  { id: 3, title: "Art Expo", image: "https://picsum.photos/300/200?random=3" },
+  {
+    id: 4,
+    title: "Startup Meetup",
+    image: "https://picsum.photos/300/200?random=4",
+  },
+  {
+    id: 5,
+    title: "Startup Meetup",
+    image: "https://picsum.photos/300/200?random=4",
+  },
+  {
+    id: 6,
+    title: "Startup Meetup",
+    image: "https://picsum.photos/300/200?random=4",
+  },
+];
 const Home = () => {
   return (
     <div>
@@ -182,23 +211,6 @@ const Home = () => {
         view="list"
       /> */}
       {/* <Grid data={values} /> */}
-      {/* <Footer
-        logo="/logo.svg"
-        description="Building modern web experiences with clarity and performance."
-        links={[
-          { label: "About", url: "/about" },
-          { label: "Contact", url: "/contact" },
-          { label: "Privacy Policy", url: "/privacy" },
-        ]}
-        socialLinks={[
-          { label: "Twitter", url: "https://twitter.com" },
-          { label: "GitHub", url: "https://github.com" },
-        ]}
-        style={{
-          textAlign: "center",
-          fontSize: { title: "text-lg", description: "text-sm" },
-        }}
-      /> */}
 
       {/* <Footer
         footerTitle="GGEs"
@@ -207,6 +219,8 @@ const Home = () => {
       /> */}
 
       <EventDetails />
+
+      {/* <EventGallery events={events} /> */}
     </div>
   );
 };
