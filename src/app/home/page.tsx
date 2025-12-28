@@ -1,6 +1,12 @@
 "use client";
 
 import EventDetails from "@/components/event-details/EventDetails";
+import SliderCard from "@/components/event-details/SliderCard";
+import Swip from "@/components/event-details/swip";
+import AppSlider from "@/components/event-details/Swipper";
+import Swipper from "@/components/event-details/Swipper";
+import { FrequentlyAskQuestion } from "@/components/faq/FrequentlyAskQuestion";
+import { SwiperSlide } from "swiper/react";
 
 const className: string = "max-w-7xl mx-auto px-6";
 
@@ -113,35 +119,17 @@ const values = [
   { id: 5, title: "kuper", label: "view all" },
   { id: 6, title: "cuper", label: "view all" },
 ];
-
-const events = [
+const slideData = [
+  { id: 1, title: "Formula 1", imageUrl: "/images/organization/formula.jpg" },
+  { id: 2, title: "Tech Expo", imageUrl: "/images/organization/formula.jpg" },
   {
-    id: 1,
-    title: "Music Fest",
-    image: "https://picsum.photos/300/200?random=1",
+    id: 3,
+    title: "Startup Meet",
+    imageUrl: "/images/organization/formula.jpg",
   },
-  {
-    id: 2,
-    title: "Tech Conference",
-    image: "https://picsum.photos/300/200?random=2",
-  },
-  { id: 3, title: "Art Expo", image: "https://picsum.photos/300/200?random=3" },
-  {
-    id: 4,
-    title: "Startup Meetup",
-    image: "https://picsum.photos/300/200?random=4",
-  },
-  {
-    id: 5,
-    title: "Startup Meetup",
-    image: "https://picsum.photos/300/200?random=4",
-  },
-  {
-    id: 6,
-    title: "Startup Meetup",
-    image: "https://picsum.photos/300/200?random=4",
-  },
+  { id: 4, title: "Music Fest", imageUrl: "/images/organization/formula.jpg" },
 ];
+
 const Home = () => {
   return (
     <div>
@@ -220,7 +208,13 @@ const Home = () => {
 
       <EventDetails />
 
-      {/* <EventGallery events={events} /> */}
+      {/* <AppSlider slidesPerView={3.2}>
+        {slideData.map((item) => (
+          <SwiperSlide key={item.id}>
+            <SliderCard title={item.title} imageUrl={item.imageUrl} />
+          </SwiperSlide>
+        ))}
+      </AppSlider> */}
     </div>
   );
 };
