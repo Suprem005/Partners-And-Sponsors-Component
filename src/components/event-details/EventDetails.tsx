@@ -9,10 +9,27 @@ import { GitHubIcon } from "../icons/GitHubIcon";
 import { ButtonGroup } from "../ui/button-group";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
+import SliderCard from "./SliderCard";
+import AppSlider from "./Swipper";
+import Swip from "./swip";
+import { FrequentlyAskQuestion } from "../faq/FrequentlyAskQuestion";
+import MapComponent from "./MapComponent";
+import { useEffect, useState } from "react";
 
 interface HeroBlockProps {
   variant?: "one" | "two" | "three" | "four";
 }
+
+const slideData = [
+  { id: 1, title: "Formula 1", imageUrl: "/images/organization/formula.jpg" },
+  { id: 2, title: "Tech Expo", imageUrl: "/images/organization/formula.jpg" },
+  {
+    id: 3,
+    title: "Startup Meet",
+    imageUrl: "/images/organization/formula.jpg",
+  },
+  { id: 4, title: "Music Fest", imageUrl: "/images/organization/formula.jpg" },
+];
 
 function HeroBanner({ variant = "one" }: HeroBlockProps) {
   const componentMap = {
@@ -95,10 +112,10 @@ function BannerTwo() {
 
 function BannerThree() {
   return (
-    <section className="@container">
-      <div>
+    <section className="@container flex flex-col w-full">
+      <div className="w-full">
         <Image
-          className="w-full h-[500px]  object-cover "
+          className="w-full h-[500px] object-cover "
           src={"/images/organization/mountain.jpg"}
           alt="Hero"
           width={1290}
@@ -106,7 +123,7 @@ function BannerThree() {
         />
       </div>
       {/* contents */}
-      <div className="flex flex-col justify-start @3xl:flex-row @3xl:gap-25 @3xl:items-center px-4">
+      <div className="flex flex-col justify-start @3xl:flex-row @3xl:justify-between @3xl:items-center px-4">
         {/* contents except button  */}
         <div
           className={`mt-10 flex flex-col justify-center items-start w-full @3xl:w-2/3 text-black @3xl:border-r-3 border-dotted`}
@@ -191,17 +208,28 @@ function BannerFour() {
 }
 
 export default function EventDetails() {
+  const [hideBottomButton, setHideBottomButton] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const bannerHeight = 780;
+      setHideBottomButton(window.scrollY < bannerHeight);
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div>
-      {/* <Snowfall color="cyan" snowflakeCount={150} /> */}
       <HeroBanner variant="three" />
+      {/* <Snowfall color="cyan" snowflakeCount={150} /> */}
 
-      <section className="@container relative flex flex-col py-5 mt-4 mx-4 mb-2">
-        <div className={`flex flex-col @2xl:flex-row  gap-15 border-b pb-6`}>
-          <div className="w-full">
+      <section className="@container relative flex flex-col-reverse md:flex-row py-5 mt-4 mb-2 w-full">
+        <div className={`flex flex-col @3xl:w-2/3 border-b pb-6`}>
+          <div className="flex flex-col">
             {/* short description  */}
-            <div className="flex mb-4 border-b-2 border-dotted p-2">
-              <p className="text-md italic text-muted-foreground">
+            <div className="mb-4  px-4">
+              <p className="text-md italic text-muted-foreground border-b-2 border-dotted pb-4">
                 &quot; Siliguri, brace yourselves! The one and only Yabesh
                 Thapa, the youth sensation who’s taken the music scene by storm,
                 is coming back to your city for an electrifying live
@@ -210,14 +238,20 @@ export default function EventDetails() {
               </p>
             </div>
 
-            <h2 className="text-3xl font-bold mb-6">Event Gallery</h2>
-
-            {/* description  */}
-            <div className="flex mb-2">
-              <button className="text-2xl font-semibold">Description</button>
+            <div className="px-4 border-b-2 border-dotted pb-4">
+              <h2 className="text-2xl @3xl:text-3xl text-start font-semibold pb-4">
+                Event Gallery
+              </h2>
+              <Swip />
             </div>
-            <div className="border-b-2 border-gray-400 border-dotted">
-              <p className="text-justify mb-4">
+            {/* description  */}
+            <div className="mt-4 px-4">
+              <button className="text-2xl @3xl:text-3xl text-start font-semibold pb-4">
+                Description
+              </button>
+            </div>
+            <div className="border-b-2 border-gray-400 border-dotted px-4">
+              <p className="text-justify pb-4">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 Officiis itaque corporis vero rerum odit, amet quisquam dolores
                 deleniti. Illum illo harum, laboriosam maxime labore ex rem id
@@ -243,12 +277,13 @@ export default function EventDetails() {
               </p>
             </div>
 
-            <div className="flex mb-4 mt-4">
-              <button className="text-2xl font-semibold">
+            {/* terms and conditions  */}
+            <div className="mt-4 px-4">
+              <button className="text-2xl @3xl:text-3xl text-start font-semibold pb-4">
                 Terms and Conditions
               </button>
             </div>
-            <ol className="list-decimal list-inside space-y-2">
+            <ol className="list-decimal list-inside space-y-2 px-4 pb-4 border-b-2 border-dotted text-justify">
               <li>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Accusantium ducimus nesciunt quas odit. Rerum facere cumque
@@ -306,71 +341,83 @@ export default function EventDetails() {
               </li>
             </ol>
           </div>
+          <div>
+            <FrequentlyAskQuestion />
+          </div>
+          <div>
+            <MapComponent />
+          </div>
+        </div>
 
-          {/* sticky */}
-          <div className="sticky top-4 right-0 flex flex-col w-full h-1/2 justify-center items-center gap-4 p-2 @2xl:items-start @2xl:w-[400px] ">
-            <div className="flex flex-col justify-center items-center w-full h-1/2 border-2 rounded-2xl p-4 hover:shadow-lg">
-              <h2 className="text-xl font-bold mb-3">Your Event Name</h2>
+        <div className="@3xl:sticky top-4 right-0  flex-col h-1/2 justify-center items-center p-2 @2xl:items-start @2xl:w-full mb-8 ">
+          <div className="mb-4 flex flex-col justify-center items-center w-full h-1/2 border-2 rounded-2xl p-4 hover:shadow-lg">
+            <h2 className="text-xl font-bold mb-3">Your Event Name</h2>
 
-              <span className="flex mb-2 text-md font-semibold">
-                Wed Dec 17, 2025 1:17 PM
-              </span>
+            <span className="flex mb-2 text-md font-semibold">
+              Wed Dec 17, 2025 1:17 PM
+            </span>
 
-              <span className="flex gap-2 mb-6">
-                <MapPin /> Location
-              </span>
+            <span className="flex gap-2 mb-6">
+              <MapPin /> Location
+            </span>
 
-              <div className="text-black w-full">
-                <Button variant="default" className="w-full">
-                  Select Tickets
-                </Button>
+            <div className="text-black w-full hidden @3xl:flex">
+              <Button variant="default" className="w-full ">
+                Select Tickets
+              </Button>
+            </div>
+          </div>
+
+          <div className="w-full flex flex-row gap-2">
+            {/* view count  */}
+            <div className="flex flex-row justify-start items-center w-1/3 border-2 rounded-2xl p-4 hover:shadow-lg">
+              <div className="flex flex-row w-full gap-2 justify-center items-center">
+                <Eye size={30} />
+                <p className="text-md">50</p>
               </div>
             </div>
 
-            <div className="w-full flex flex-row gap-2">
-              {/* view count  */}
-              <div className="flex flex-row justify-start items-center w-1/3 border-2 rounded-2xl p-4 hover:shadow-lg">
-                <div className="flex flex-row w-full gap-2 justify-center items-center">
-                  <Eye size={30} />
-                  <p className="text-md">50</p>
-                </div>
+            <div className="flex flex-row gap-1 justify-center w-2/3 @3xl:gap-2  items-center border-2 rounded-2xl p-4 hover:shadow-lg ">
+              <div className="flex gap-1 justify-center items-center font-mono border-r-2">
+                <a className="flex items-center justify-center rounded-md hover:bg-gray-100">
+                  <Share2 strokeWidth={2} size={20} /> Share
+                </a>
               </div>
 
-              <div className="flex flex-row gap-2 justify-between items-center border-2 rounded-2xl p-4 hover:shadow-lg w-full">
-                <div className="flex gap-1 justify-center items-center font-mono border-r-2 pr-2">
-                  <a className="flex items-center justify-center gap-1  rounded-md hover:bg-gray-100">
-                    <Share2 strokeWidth={2} size={20} /> Share
-                  </a>
-                </div>
+              {/* social media  */}
+              <div className="flex flex-row gap-1">
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  className="flex items-center justify-center  rounded-md hover:bg-gray-100"
+                >
+                  <InstagramIcon className="h-8 w-8" />
+                </a>
 
-                {/* social media  */}
-                <div className="flex flex-row gap-1">
-                  <a
-                    href="https://www.instagram.com/"
-                    target="_blank"
-                    className="flex items-center justify-center  rounded-md hover:bg-gray-100"
-                  >
-                    <InstagramIcon className="h-8 w-8" />
-                  </a>
-
-                  <a
-                    href="https://www.linkedin.com/in/suprem-shrestha-9861992b1/"
-                    className="flex items-center justify-center rounded-md hover:bg-gray-100"
-                  >
-                    <LinkedInIcon className="h-8 w-8" />
-                  </a>
-                  <a
-                    href="https://github.com/Suprem005"
-                    target="_blank"
-                    className="flex items-center justify-center rounded-md hover:bg-gray-100"
-                  >
-                    <GitHubIcon className="h-8 w-8" />
-                  </a>
-                </div>
+                <a
+                  href="https://www.linkedin.com/in/suprem-shrestha-9861992b1/"
+                  className="flex items-center justify-center rounded-md hover:bg-gray-100"
+                >
+                  <LinkedInIcon className="h-8 w-8" />
+                </a>
+                <a
+                  href="https://github.com/Suprem005"
+                  target="_blank"
+                  className="flex items-center justify-center rounded-md hover:bg-gray-100"
+                >
+                  <GitHubIcon className="h-8 w-8" />
+                </a>
               </div>
             </div>
           </div>
         </div>
+        {!hideBottomButton && (
+          <div className="flex w-full justify-center fixed bottom-0 md:hidden bg-gray-100 p-4 z-50">
+            <Button variant={"default"} className="w-full">
+              Select Tickets
+            </Button>
+          </div>
+        )}
       </section>
     </div>
   );
