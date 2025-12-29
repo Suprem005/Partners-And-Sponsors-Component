@@ -148,11 +148,8 @@ function BannerThree() {
             <MapPin /> Location
           </span>
         </div>
-        <div className="text-black @3xl:w-1/4 ">
-          <Button
-            className="@3xl:w-full h-[60px] rounded-2xl"
-            variant="default"
-          >
+        <div className="text-black flex @3xl:w-1/4 ">
+          <Button className="w-full @3xl:w-full  h-10 " variant="default">
             Select Tickets
           </Button>
         </div>
@@ -165,7 +162,7 @@ function BannerFour() {
   return (
     <section className="@container py-6">
       {/* wrapper  */}
-      <div className="flex flex-col @2xl:flex-row items-start gap-12 mx-6">
+      <div className="flex flex-col @2xl:flex-row items-start gap-12 px-6">
         {/* image  */}
         <div className="w-full @2xl:w-2/3">
           <Image
@@ -183,20 +180,29 @@ function BannerFour() {
         <div className="w-full @2xl:w-1/3 flex flex-col justify-start items-start px-2">
           {/* contents except button  */}
           <div
-            className={`@lg:mt-10 flex flex-col justify-center items-start w-full @2xl:w-full text-black  `}
+            className={`mt-10 flex flex-col justify-center items-start w-full @2xl:w-full text-black  `}
           >
-            <h2 className="text-3xl @md:text-4xl @lg:text-5xl font-bold mb-4 @3xl:mb-10">
+            <h2 className="text-4xl @lg:text-5xl font-bold mb-4 @3xl:mb-10">
               Your Event Name
             </h2>
 
-            <span className="flex mb-2">Wed Dec 17, 2025 1:17 PM</span>
+            <div className="mb-4 w-full flex flex-wrap gap-2">
+              <Badge variant={"default"}>Exhibition</Badge>
+              <Badge variant={"outline"}>#Music</Badge>
+              <Badge variant={"outline"}>#Fun</Badge>
+              <Badge variant={"outline"}>#Songs</Badge>
+            </div>
+            <span className="flex gap-2 mb-4">
+              <CalendarHeart />
+              Wed Dec 17, 2025 1:17 PM
+            </span>
 
             <span className="flex gap-2 mb-5">
               <MapPin /> Location
             </span>
 
             <div className="text-black w-full">
-              <Button className="w-full " variant="default">
+              <Button className="w-full h-10" variant="default">
                 Select Tickets
               </Button>
             </div>
@@ -242,7 +248,7 @@ export default function EventDetails() {
               <h2 className="text-2xl @3xl:text-3xl text-start font-semibold pb-4">
                 Event Gallery
               </h2>
-              <Swip />
+              {/* <Swip /> */}
             </div>
             {/* description  */}
             <div className="mt-4 px-4">
@@ -349,7 +355,7 @@ export default function EventDetails() {
           </div>
         </div>
 
-        <div className="@3xl:sticky top-4 right-0  flex-col h-1/2 justify-center items-center p-2 @2xl:items-start @2xl:w-full mb-8 ">
+        <div className="@3xl:sticky top-4 right-0  flex-col h-1/2 justify-center items-center p-2 @2xl:items-start mb-8 ">
           <div className="mb-4 flex flex-col justify-center items-center w-full h-1/2 border-2 rounded-2xl p-4 hover:shadow-lg">
             <h2 className="text-xl font-bold mb-3">Your Event Name</h2>
 
@@ -362,7 +368,7 @@ export default function EventDetails() {
             </span>
 
             <div className="text-black w-full hidden @3xl:flex">
-              <Button variant="default" className="w-full ">
+              <Button variant="default" className="w-full h-10">
                 Select Tickets
               </Button>
             </div>
