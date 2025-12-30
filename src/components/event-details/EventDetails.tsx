@@ -1,20 +1,14 @@
-import { CalendarHeart, Eye, MapPin, Share, Share2 } from "lucide-react";
+import { CalendarHeart, Eye, MapPin, Share2 } from "lucide-react";
 import Image from "next/image";
-import { Button } from "../ui/button";
-import Snowfall from "react-snowfall";
-import { Badge } from "../ui/badge";
-import { InstagramIcon } from "../icons/InstagramIcon";
+import { useEffect, useState } from "react";
+import { FrequentlyAskQuestion } from "../faq/FrequentlyAskQuestion";
 import { LinkedInIcon } from "../icons";
 import { GitHubIcon } from "../icons/GitHubIcon";
-import { ButtonGroup } from "../ui/button-group";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
-import SliderCard from "./SliderCard";
-import AppSlider from "./Swipper";
-import Swip from "./swip";
-import { FrequentlyAskQuestion } from "../faq/FrequentlyAskQuestion";
+import { InstagramIcon } from "../icons/InstagramIcon";
+import { Badge } from "../ui/badge";
+import { Button } from "../ui/button";
 import MapComponent from "./MapComponent";
-import { useEffect, useState } from "react";
+import Swip from "./swip";
 
 interface HeroBlockProps {
   variant?: "one" | "two" | "three" | "four";
@@ -148,11 +142,8 @@ function BannerThree() {
             <MapPin /> Location
           </span>
         </div>
-        <div className="text-black @3xl:w-1/4 ">
-          <Button
-            className="@3xl:w-full h-[60px] rounded-2xl"
-            variant="default"
-          >
+        <div className="text-black flex @3xl:w-1/4 ">
+          <Button className="w-full @3xl:w-full  h-10 " variant="default">
             Select Tickets
           </Button>
         </div>
@@ -165,7 +156,7 @@ function BannerFour() {
   return (
     <section className="@container py-6">
       {/* wrapper  */}
-      <div className="flex flex-col @2xl:flex-row items-start gap-12 mx-6">
+      <div className="flex flex-col @3xl:flex-row items-start gap-12 px-6">
         {/* image  */}
         <div className="w-full @2xl:w-2/3">
           <Image
@@ -183,20 +174,29 @@ function BannerFour() {
         <div className="w-full @2xl:w-1/3 flex flex-col justify-start items-start px-2">
           {/* contents except button  */}
           <div
-            className={`@lg:mt-10 flex flex-col justify-center items-start w-full @2xl:w-full text-black  `}
+            className={`mt-10 flex flex-col justify-center items-start w-full @2xl:w-full text-black  `}
           >
-            <h2 className="text-3xl @md:text-4xl @lg:text-5xl font-bold mb-4 @3xl:mb-10">
+            <h2 className="text-4xl @lg:text-5xl font-bold mb-4 @3xl:mb-10">
               Your Event Name
             </h2>
 
-            <span className="flex mb-2">Wed Dec 17, 2025 1:17 PM</span>
+            <div className="mb-4 w-full flex flex-wrap gap-2">
+              <Badge variant={"default"}>Exhibition</Badge>
+              <Badge variant={"outline"}>#Music</Badge>
+              <Badge variant={"outline"}>#Fun</Badge>
+              <Badge variant={"outline"}>#Songs</Badge>
+            </div>
+            <span className="flex gap-2 mb-4">
+              <CalendarHeart />
+              Wed Dec 17, 2025 1:17 PM
+            </span>
 
             <span className="flex gap-2 mb-5">
               <MapPin /> Location
             </span>
 
             <div className="text-black w-full">
-              <Button className="w-full " variant="default">
+              <Button className="w-full h-10" variant="default">
                 Select Tickets
               </Button>
             </div>
@@ -221,10 +221,10 @@ export default function EventDetails() {
 
   return (
     <div>
-      <HeroBanner variant="three" />
+      <HeroBanner variant="one" />
       {/* <Snowfall color="cyan" snowflakeCount={150} /> */}
 
-      <section className="@container relative flex flex-col-reverse md:flex-row py-5 mt-4 mb-2 w-full">
+      <section className="@container relative flex flex-col-reverse md:flex-row py-5 mt-4 mb-2 w-full justify-between px-4">
         <div className={`flex flex-col @3xl:w-2/3 border-b pb-6`}>
           <div className="flex flex-col">
             {/* short description  */}
@@ -349,8 +349,8 @@ export default function EventDetails() {
           </div>
         </div>
 
-        <div className="@3xl:sticky top-4 right-0  flex-col h-1/2 justify-center items-center p-2 @2xl:items-start @2xl:w-full mb-8 ">
-          <div className="mb-4 flex flex-col justify-center items-center w-full h-1/2 border-2 rounded-2xl p-4 hover:shadow-lg">
+        <div className="@3xl:sticky top-4 right-0  flex-col h-1/2 justify-center items-center @2xl:items-start mb-8 ">
+          <div className="mb-4 flex flex-col justify-center items-center h-1/2 border-2 rounded-2xl p-4 hover:shadow-lg">
             <h2 className="text-xl font-bold mb-3">Your Event Name</h2>
 
             <span className="flex mb-2 text-md font-semibold">
@@ -362,13 +362,13 @@ export default function EventDetails() {
             </span>
 
             <div className="text-black w-full hidden @3xl:flex">
-              <Button variant="default" className="w-full ">
+              <Button variant="default" className="w-full h-10">
                 Select Tickets
               </Button>
             </div>
           </div>
 
-          <div className="w-full flex flex-row gap-2">
+          <div className=" flex flex-row gap-2">
             {/* view count  */}
             <div className="flex flex-row justify-start items-center w-1/3 border-2 rounded-2xl p-4 hover:shadow-lg">
               <div className="flex flex-row w-full gap-2 justify-center items-center">
@@ -377,7 +377,7 @@ export default function EventDetails() {
               </div>
             </div>
 
-            <div className="flex flex-row gap-1 justify-center w-2/3 @3xl:gap-2  items-center border-2 rounded-2xl p-4 hover:shadow-lg ">
+            <div className="flex flex-row gap-1 justify-center @3xl:gap-2  items-center border-2 rounded-2xl p-4 hover:shadow-lg ">
               <div className="flex gap-1 justify-center items-center font-mono border-r-2">
                 <a className="flex items-center justify-center rounded-md hover:bg-gray-100">
                   <Share2 strokeWidth={2} size={20} /> Share
