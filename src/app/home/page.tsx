@@ -1,12 +1,9 @@
 "use client";
 
+import BlogAlternativeDesign from "@/components/alternative-design/BlogAlternativeDesign";
 import EventDetails from "@/components/event-details/EventDetails";
-import SliderCard from "@/components/event-details/SliderCard";
-import Swip from "@/components/event-details/swip";
-import AppSlider from "@/components/event-details/Swipper";
-import Swipper from "@/components/event-details/Swipper";
-import { FrequentlyAskQuestion } from "@/components/faq/FrequentlyAskQuestion";
-import { SwiperSlide } from "swiper/react";
+import SectionWrapper from "@/components/review/Reviews";
+import StayConnected from "@/components/stay-connected/StayConnected";
 
 const className: string = "max-w-7xl mx-auto px-6";
 
@@ -150,7 +147,7 @@ const Home = () => {
         image={{ src: "/images/organization/formula.jpg", alt: "F1 RedBull" }}
       /> */}
 
-      {/* <Reviews
+      {/* <SectionWrapper
         title={[
           { text: "What Our Client", color: "text-black" },
           { text: "Say!?", color: "text-black" },
@@ -206,15 +203,11 @@ const Home = () => {
         className={className}
       /> */}
 
-      <EventDetails />
+      {/* <EventDetails /> */}
 
-      {/* <AppSlider slidesPerView={3.2}>
-        {slideData.map((item) => (
-          <SwiperSlide key={item.id}>
-            <SliderCard title={item.title} imageUrl={item.imageUrl} />
-          </SwiperSlide>
-        ))}
-      </AppSlider> */}
+      {/* <StayConnected /> */}
+
+      <BlogAlternativeDesign />
     </div>
   );
 };
