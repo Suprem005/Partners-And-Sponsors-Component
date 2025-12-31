@@ -25,7 +25,7 @@ export default function ConnectWithUs() {
           {/* ---3 card--   */}
           <div className="flex flex-wrap sm:flex-row justify-center sm:items-center md:gap-10 gap-8 ">
             {/* gmail  */}
-            <div className="min-w-55 h-30 bg-neutral-900 rounded-xl flex flex-row p-2 items-center">
+            <div className="min-w-55 h-30 bg-neutral-900 rounded-xl flex flex-row p-3 items-center">
               <div className="flex flex-row gap-4 w-full">
                 <div>
                   <Gmail />
@@ -40,7 +40,7 @@ export default function ConnectWithUs() {
             </div>
 
             {/* phone  */}
-            <div className="min-w-55 h-30 bg-neutral-900 rounded-xl flex flex-row p-2 items-center">
+            <div className="min-w-55 h-30 bg-neutral-900 rounded-xl flex flex-row p-3 items-center">
               <div className="flex flex-row gap-4 w-full">
                 <div>
                   <Headset />
@@ -55,7 +55,7 @@ export default function ConnectWithUs() {
             </div>
 
             {/* Address  */}
-            <div className="min-w-55 h-30 bg-neutral-900 rounded-xl flex flex-row p-2 items-center">
+            <div className="min-w-55 h-30 bg-neutral-900 rounded-xl flex flex-row p-3 items-center">
               <div className="flex flex-row gap-4 w-full">
                 <div>
                   <Address />
