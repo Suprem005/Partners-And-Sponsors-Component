@@ -1,70 +1,64 @@
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
+import Blogs from "./Blogs";
+
+const blogs = [
+  {
+    id: 1,
+    title: "Why Youth Academics Are Shaping The Future of Soccer?",
+    date: "March 12, 2025",
+    category: ["Sports", "Reading"],
+  },
+  {
+    id: 2,
+    title: "How Grassroots Football Is Changing Player Development",
+    date: "January 12, 2025",
+    category: ["Sports", "Reading", "Social"],
+  },
+  {
+    id: 3,
+    title: "The Role of Technology in Modern Soccer Training",
+    date: "December 12, 2025",
+    category: ["Sports", "Technology"],
+  },
+];
 
 interface BlogAlternativesProps {
-  variant?: "one" | "two";
+  variant?: "one";
 }
 
 function BlogAlternatives({ variant = "one" }: BlogAlternativesProps) {
   const componentMap = {
     one: <Blog1 />,
-    two: <Blog2 />,
   };
   return componentMap[variant];
 }
 
 function Blog1() {
   return (
-    <section className="@container">
-      <div className="bg-white relative rounded-3xl p-4 min-h-[400px] w-full flex flex-col justify-end bg-[url('/images/organization/mountain.jpg')] bg-no-repeat bg-center bg-cover">
-        {/* overlay  */}
-        <div
-          className={`absolute rounded-3xl inset-0 bg-black opacity-22 z-1`}
-        />
+    <section className="flex w-full">
+      <div className="relative min-h-[400px] min-w-[288px] w-full rounded-3xl bg-[url('/images/organization/mountain.jpg')] bg-cover bg-center bg-no-repeat p-4 flex flex-col justify-end">
+        {/* overlay */}
+        <div className="absolute inset-0 rounded-3xl bg-black opacity-20 z-10 pointer-events-none" />
 
-        {/* content  */}
-        <div className="relative z-2 inset-0 flex flex-col">
-          <div className=" flex flex-row items-center justify-between py-4 border-b-2 border-white">
-            <div>
-              <h2 className="text-3xl text-white">Featured Blog</h2>
-            </div>
-
-            {/* images  */}
-            {/* <div className="flex relative flex-row">
-              <div className="">
-                <Image
-                  src={"/images/organization/mountain.jpg"}
-                  width={20}
-                  height={20}
-                  alt="formula"
-                  className="h-5 w-5 rounded-full object-cover"
-                />
-                <Image
-                  src={"/images/organization/formula.jpg"}
-                  width={20}
-                  height={20}
-                  alt="formula"
-                  className="h-5 w-5 rounded-full object-cover"
-                />
-              </div>
-            </div> */}
+        {/* content */}
+        <div className="relative z-20 flex flex-col">
+          <div className="flex items-center justify-between py-4 border-b-2 border-white">
+            <h2 className="text-3xl text-white">Featured Blog</h2>
           </div>
 
-          <div className=" flex flex-row items-center justify-between py-4 text-wrap">
+          <div className="flex items-center justify-between py-4 wrap-break-word">
             <div className="basis-2/4">
               <p className="text-xs text-white">
                 Drive Into Our Handpicked Blog Posts: Trending, Insightful, And
                 Worth Your Time
               </p>
             </div>
-            <div className="flex flex-row justify-center items-center gap-3 basis-1/4">
-              <div>
-                <p className="text-xs text-white">Total Blog</p>
-              </div>
-              <div>
-                <p className="text-4xl text-red-300">5K+</p>
-              </div>
+
+            <div className="flex items-center gap-3 basis-1/4">
+              <p className="text-xs text-white">Total Blog</p>
+              <p className="text-4xl text-red-300">5K+</p>
             </div>
           </div>
         </div>
@@ -72,20 +66,17 @@ function Blog1() {
     </section>
   );
 }
-function Blog2() {
-  return <div>this is me</div>;
-}
 
 export default function BlogAlternativeDesign() {
   return (
-    <div className="flex flex-row">
-      <div className="px-4 py-4 basis-1/2">
+    <div className="flex flex-col md:flex-row gap-10 items-stretch p-4">
+      <div className="rounded-3xl lg:w-1/2">
         <BlogAlternatives variant="one" />
       </div>
-      <div className="px-4 py-4 flex flex-col basis-1/2">
+      {/* <div className="px-4 py-4 flex flex-col">
         <div className="flex flex-row pb-4 border-b-2 mb-4">
           <div className="flex flex-col ">
-            <h2 className="text-3xl pb-2">
+            <h2 className="text-2xl pb-2 text-wrap">
               Why Youth Academics Are Shaping The Future of Soccer ?
             </h2>
 
@@ -191,6 +182,9 @@ export default function BlogAlternativeDesign() {
             </Button>
           </div>
         </div>
+      </div> */}
+      <div className="flex items-center lg:w-1/2">
+        <Blogs blogs={blogs} />
       </div>
     </div>
   );

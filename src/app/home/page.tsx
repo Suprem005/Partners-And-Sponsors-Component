@@ -1,6 +1,7 @@
 "use client";
 
 import BlogAlternativeDesign from "@/components/alternative-design/BlogAlternativeDesign";
+import Blogs from "@/components/alternative-design/Blogs";
 import EventDetails from "@/components/event-details/EventDetails";
 import SectionWrapper from "@/components/review/Reviews";
 import StayConnected from "@/components/stay-connected/StayConnected";
@@ -125,6 +126,27 @@ const slideData = [
     imageUrl: "/images/organization/formula.jpg",
   },
   { id: 4, title: "Music Fest", imageUrl: "/images/organization/formula.jpg" },
+];
+
+const blogs = [
+  {
+    id: 1,
+    title: "Why Youth Academics Are Shaping The Future of Soccer?",
+    date: "March 12, 2025",
+    category: ["Sports", "Reading"],
+  },
+  {
+    id: 2,
+    title: "How Grassroots Football Is Changing Player Development",
+    date: "January 12, 2025",
+    category: ["Sports", "Reading", "Social"],
+  },
+  {
+    id: 3,
+    title: "The Role of Technology in Modern Soccer Training",
+    date: "December 12, 2025",
+    category: ["Sports", "Technology"],
+  },
 ];
 
 const Home = () => {
