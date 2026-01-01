@@ -23,7 +23,7 @@ export default function About() {
             alt="teamwork"
             width={800}
             height={400}
-            className="object-cover  max-h-[300px] rounded-2xl"
+            className="object-cover w-full max-h-[300px] rounded-2xl"
           />
         </div>
       </div>
