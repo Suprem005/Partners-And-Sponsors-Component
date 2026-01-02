@@ -7,7 +7,7 @@ export const LinkedInIcon = (props: React.SVGProps<SVGSVGElement>) => (
     height="20"
     viewBox="0 0 24 24"
     fill="none"
-    stroke="#f2f2f2"
+    stroke="#626161"
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"

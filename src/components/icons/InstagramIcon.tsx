@@ -7,7 +7,7 @@ export const InstagramIcon = (props: React.SVGProps<SVGSVGElement>) => (
     height="20"
     viewBox="0 0 24 24"
     fill="none"
-    stroke="#b5b4b4"
+    stroke="#626161"
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"

@@ -3,6 +3,11 @@ import About from "./(component)/About";
 import ConnectWithUs from "./(component)/ConnectWithUs";
 import MeetOurExperts from "./(component)/MeetOurExperts";
 import WhatOurFounderSays from "./(component)/WhatOurFounderSays";
+import GetStarted from "./(component)/GetStarted";
+import OurVisions from "./(component)/OurVisions";
+import { title } from "process";
+import Footer from "@/components/footer/Footer";
+import FooterComponent from "./(component)/FooterComponent";
 
 const expertData = [
   { id: 1, name: "Niwesh Shrestha", position: "Senior Frontend Engineer" },
@@ -10,17 +15,30 @@ const expertData = [
   { id: 3, name: "Pratik Joshi", position: "CEO" },
 ];
 
+const ourVisionData = [
+  {
+    id: 1,
+    title: "Our Story",
+    description:
+      "With Great Power COmes Great REsponsibility! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, quas possimus optio deleniti, tenetur non porro numquam beatae sunt suscipit, sed totam pariatur molestiae eaque minima iure estnam laborum. This is supreme power of my capability",
+    imageUrl: "/images/organization/pratikdai.png",
+  },
+  {
+    id: 2,
+    title: "Our Target",
+    description:
+      "With Great Power COmes Great REsponsibility! Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, quas possimus optio deleniti, tenetur non porro numquam beatae sunt suscipit, sed totam pariatur molestiae eaque minima iure estnam laborum. This is supreme power of my capability",
+    imageUrl: "/images/organization/pratikdai.png",
+  },
+];
+
 export default function AboutPage() {
   return (
     <section className="@container">
-      {/* <div className="box" id="id"> */}
-      {/*   <div className="even:bg-amber-400 odd:bg-blue-200">AboutPage</div> */}
-      {/*   <div className="even:bg-amber-400 odd:bg-blue-200">AboutPage</div> */}
-      {/*   <div className="even:bg-amber-400 odd:bg-blue-200">AboutPage</div> */}
-      {/*   <div className="even:bg-amber-400 odd:bg-blue-200">AboutPage</div> */}
-      {/* </div> */}
       <About />
       <ConnectWithUs />
+      <OurVisions ourVisionData={ourVisionData} />
+
       <MeetOurExperts
         title="Meet Our Experts"
         shortDescription="Discover the passionate team of innovators, strategists, and
@@ -29,6 +47,8 @@ export default function AboutPage() {
         expertData={expertData}
       />
       <WhatOurFounderSays />
+      <GetStarted />
+      <FooterComponent />
     </section>
   );
 }

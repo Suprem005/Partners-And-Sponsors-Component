@@ -19,7 +19,7 @@ export default function About() {
 
         <div className="flex flex-col w-full justify-center items-center">
           <Image
-            src={"/images/organization/mountain.jpg"}
+            src={"/images/organization/hills.jpg"}
             alt="teamwork"
             width={800}
             height={400}

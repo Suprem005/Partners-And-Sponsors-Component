@@ -15,11 +15,11 @@ export default function WhatOurFounderSays() {
             width={450}
             height={450}
             alt="Peter Joshi"
-            className="rounded-xl min-w-[228px] w-[350px] h-[390px]"
+            className="rounded-xl min-w-[220px] w-[350px] h-[390px]"
           />
         </div>
 
-        <div className="flex bg-neutral-900 rounded-xl min-w-[228px] w-[350px] h-[390px] p-6">
+        <div className="flex bg-neutral-900 rounded-xl min-w-[220px] w-auto max-w-[350px] h-[390px] p-6">
           <div className="flex flex-col items-start justify-between">
             <div>
               <p className="text-md text-gray-400 text-wrap">
